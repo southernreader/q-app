@@ -6,7 +6,7 @@ This is a small quarkus demo project that can be used to deploy to openshift
 
     oc new-project demo-jvm
     
-    oc new-app registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift~https://github.com/tqvarnst/q-app
+    oc new-app registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift~https://github.com/southernreader/q-app
     
     oc expose svc q-app
     
@@ -18,7 +18,7 @@ To deploy this application as a native build using the Quarkus S2I image do the 
 
     oc new-project demo-s2i-native
 
-    oc new-app --name=q-app quay.io/quarkus/centos-quarkus-native-s2i:graalvm-1.0.0-rc15~https://github.com/tqvarnst/q-app.git
+    oc new-app --name=q-app quay.io/quarkus/centos-quarkus-native-s2i:graalvm-1.0.0-rc15~https://github.com/southernreader/q-app.git
 
     oc cancel-build bc/q-app
 
@@ -42,7 +42,7 @@ The following commands will create a chained build.
 
     oc new-project demo-minimal-native
 
-    oc new-build --name=q-app-build quay.io/quarkus/centos-quarkus-native-s2i:graalvm-1.0.0-rc15~https://github.com/tqvarnst/q-app.git 
+    oc new-build --name=q-app-build quay.io/quarkus/centos-quarkus-native-s2i:graalvm-1.0.0-rc15~https://github.com/southernreader/q-app.git 
 
     oc cancel-build bc/q-app-build
 
